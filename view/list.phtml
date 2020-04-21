@@ -1,0 +1,30 @@
+<!doctype html>
+<meta charset="utf-8">
+<?php if (!$students): ?>
+    <p>Объявлений пока нет.</p>
+<?php else: ?>
+    <table>
+    <tr>
+     <td>Name</td>
+     <td>Surname</td>
+     <td>Sex</td>
+     <td>Group Id</td>
+     <td>Email</td>
+     <td>Score</td>
+     <td>Birth Year</td>
+     <td>Local</td>
+    </tr>
+    <?php foreach ($students as $student): ?>
+    <tr>
+        <td><?= htmlspecialchars($student->name) ?></td>
+        <td><?= htmlspecialchars($student->surname) ?></td>
+        <td><?= htmlspecialchars($student->sex) ?></td>
+        <td><?= htmlspecialchars($student->group_id) ?></td>
+        <td><?= htmlspecialchars($student->email) ?></td>
+        <td><?= htmlspecialchars($student->score) ?></td>
+        <td><?= htmlspecialchars($student->birth_year) ?></td>
+        <td><?= htmlspecialchars($student->local) ?></td>
+    </tr>
+    <?php endforeach ?>
+    <table>
+<?php endif ?>
